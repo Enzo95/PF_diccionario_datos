@@ -9,11 +9,11 @@ class Desarrollador(models.Model):
 
 class Grupo(models.Model):
 
-    id = models.IntegerField()
+    id_grupo = models.IntegerField()
     tabla = models.CharField(max_length=30)
     desarrollador = models.IntegerField()
     frecuencia_act = models.CharField(max_length=30)
-    area_solicitud = models.CharField(max_length=50)
+    area_solicitud = models.CharField(max_length=30)
     herramienta = models.CharField(max_length=30)
 
 class Dicty(models.Model):
