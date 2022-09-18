@@ -7,6 +7,9 @@ class Desarrollador(models.Model):
     legajo = models.IntegerField()
     puesto = models.CharField(max_length=50)
 
+    def __str__(self):
+        return print(f"{self.nombre} {self.apellido} leg: {self.legajo}")
+
 class Grupo(models.Model):
 
     id_grupo = models.IntegerField()
@@ -16,6 +19,9 @@ class Grupo(models.Model):
     area_solicitud = models.CharField(max_length=30)
     herramienta = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.id_grupo
+
 class Dicty(models.Model):
     nombre = models.CharField(max_length=50)
 
@@ -24,7 +30,7 @@ class Dicty(models.Model):
 
 class Tabla(models.Model):
 
-    container = models.ForeignKey(Dicty, on_delete=models.CASCADE, db_index=True)
+    nombre = models.CharField(max_length=50)
     campo = models.CharField(max_length=240, db_index=True)
     descripcion = models.CharField(max_length=240, db_index=True)
 
